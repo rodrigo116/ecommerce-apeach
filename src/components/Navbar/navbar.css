@@ -1,0 +1,13 @@
+.fotoLogo{
+    height:50px;
+}
+.menuHeader ul{
+    list-style-type: none;
+    width: 75vw;
+    display: flex;
+    justify-content: space-around;
+
+}
+.botonNavBar{
+    color: white;
+}
