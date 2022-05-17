@@ -1,15 +1,11 @@
 import './navbar.css';
-import AppBar from '@mui/material/AppBar';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import {  AppBar,  Stack, Toolbar,Typography, Button } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 
 function appBarLabel() {
 return (
     <Toolbar>
-    <img className='fotoLogo' src="./logo-apeach.jpg" />
+    <img className='fotoLogo' src="./logo-apeach.jpg" alt="logo"/>
     <Typography className='menuHeader' variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
     <ul>
         <li>
