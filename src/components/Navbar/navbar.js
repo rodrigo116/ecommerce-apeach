@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 function appBarLabel() {
 return (
     <Toolbar>
-    <img className='fotoLogo' src="./logo-apeach.jpg" />
+    <img className='fotoLogo' src="./logo-apeach.jpg" alt="logo" />
     <Typography className='menuHeader' variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
     <ul>
         <li>
