@@ -1,4 +1,5 @@
 import './navbar.css';
+import CartWidget from '../CartWidget/CartWidget.js'
 import {  AppBar,  Stack, Toolbar,Typography, Button } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -22,7 +23,10 @@ return (
         </li>
     </ul>
     </Typography>
-    <h2>Apeach Bar</h2>
+    <h2 className='nombreBar'>Apeach Bar</h2>
+    <div>
+        <CartWidget/> 
+    </div>
     </Toolbar>
     );
 }

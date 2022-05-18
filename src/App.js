@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>Ecommerce Apeach</h1>
-      <CardList />
+      <CardList title='Cocteles' />
     </div>
   );
 }

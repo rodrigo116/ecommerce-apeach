@@ -3,11 +3,14 @@
 }
 .menuHeader ul{
     list-style-type: none;
-    width: 75vw;
+    width: 70vw;
     display: flex;
     justify-content: space-around;
 
 }
 .botonNavBar{
     color: white;
+}
+.nombreBar{
+    margin-right: 20px;
 }
