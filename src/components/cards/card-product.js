@@ -1,7 +1,9 @@
 import './card-product.css';
+import ItemCount from '../count/ItemCount'
 import {  Card, CardContent, Button } from '@mui/material';
 
-const CardProduct = ({ image, title, price }) => {
+
+const CardProduct = ({ image, title, price, stock }) => {
 
     return(
         <Card sx={{ minWidth: 275 }}>
@@ -12,6 +14,7 @@ const CardProduct = ({ image, title, price }) => {
                     </div>
                     <p>{title}</p>
                     <span className='precio'> $ {price}</span>
+                    <ItemCount stock={stock} />
                     <Button style={{color: "black"}}>Agregar</Button>
                 </div>
             </CardContent>
