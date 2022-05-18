@@ -1,25 +1,20 @@
 import './navbar.css';
 import {  AppBar,  Stack, Toolbar,Typography, Button } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
+import { navBarOptions } from '../helpers/strings.js'
 function appBarLabel() {
+
 return (
     <Toolbar>
     <img className='fotoLogo' src="./logo-apeach.jpg" alt="logo"/>
     <Typography className='menuHeader' variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-    <ul>
+    <ul className='list-item'>
+    
+    {navBarOptions.map(navBarOptions => {
         <li>
-            <Button style={{color: "white"}} variant="text">Home</Button>
+            <a href='home'><Button>{navBarOptions}</Button></a>
         </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Menú</Button>
-        </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Contacto</Button>
-        </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Nosotros</Button>
-        </li>
+    })} 
     </ul>
     </Typography>
     <h2>Apeach Bar</h2>
@@ -47,3 +42,16 @@ return (
     </Stack>
 );
 }
+{/* <li>
+<Button style={{color: "white"}} variant="text">Home</Button>
+</li>
+<li>
+<Button style={{color: "white"}} variant="text">Menú</Button>
+</li>
+<li>
+<Button style={{color: "white"}} variant="text">Contacto</Button>
+</li>
+<li>
+<Button style={{color: "white"}} variant="text">Nosotros</Button>
+</li>
+<button></button> */}
