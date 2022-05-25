@@ -1,7 +1,9 @@
-import './CardList.css';
-import CardProduct from '../cards/card-product';
 import { useState, useEffect } from 'react'
-const CardList = (prop) => {
+import ItemList from './ItemList.js';
+
+
+function ItemListContainer() {
+
     const [products, setProducts] = useState([])
     const productos = [
         {
@@ -63,22 +65,11 @@ const CardList = (prop) => {
     }, [])
 
 
-    return(
-        <>
-        <h2>{prop.title}</h2>
-        <div className="products">
-            {
-                products.map( ({title, price, image, description, stock, id }) => {
-                    return(
-                        <div key={id}>
-                            <CardProduct stock={stock} title={title} price={price} image={image}/>
-                        </div>
-                    )
-                })
-            }
-        </div>
-        </>
-    )
+    return (
+    <div >
+        <ItemList title={'Cocteles'} products={productos} />
+    </div>
+    );
 }
 
-export default CardList
+export default ItemListContainer;

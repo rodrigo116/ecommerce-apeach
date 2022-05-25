@@ -5,12 +5,12 @@ const ItemCount = (prop) => {
     const stock = prop.stock;
     const addCount = () => {
         if(stock > count){
-            setCount(count + 1 )
+            setCount( prev => prev +1 )
         }
     }
     const removeCount = () => {
         if(count > 1){
-            setCount(count - 1 )
+            setCount( prev => prev -1 )
         }
     }
     
