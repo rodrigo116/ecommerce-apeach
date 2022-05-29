@@ -16,9 +16,9 @@ const ItemCount = (prop) => {
     
     return(
         <div className='containerCount'>
-            <button onClick={removeCount}>-</button>
+            <button className='resta' onClick={removeCount}>-</button>
             <span>{count}</span>
-            <button onClick={addCount}>+</button>
+            <button className='suma' onClick={addCount}>+</button>
         </div>
     )
 }

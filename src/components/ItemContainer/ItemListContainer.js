@@ -1,44 +1,10 @@
 import { useState, useEffect } from 'react'
 import ItemList from './ItemList.js';
+import productos from '../../utils/ProductsMock.js'
 
 
 function ItemListContainer() {
-
     const [products, setProducts] = useState([])
-    const productos = [
-        {
-            title : "Apeach in House",
-            price : 500,
-            image : "trago1",
-            description : '',
-            stock : 10,
-            id : 1
-        },
-        {
-            title : "Apeach Tropical",
-            price : 600,
-            image : "trago2",
-            description : '',
-            stock : 3,
-            id : 2
-        },
-        {
-            title : "Old Terrier Pink",
-            price : 650,
-            image : "trago3",
-            description : '',
-            stock : 6,
-            id : 3
-        },
-        {
-            title : "Aperol Spritz",
-            price : 500,
-            image : "trago4",
-            description : '',
-            stock : 10,
-            id : 4
-        }
-    ]
 
     const getProducts = () => {
         return new Promise( ( resolve, reject) => {

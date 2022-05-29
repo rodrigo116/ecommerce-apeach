@@ -1,15 +1,18 @@
 
 import './App.css';
 import NavBar from './components/Navbar/navbar.js';
-import CardList from './components/CardList/CardList.js';
 import ItemListContainer from './components/ItemContainer/ItemListContainer.js';
+import ItemDetailContainer from './components/DetailContainer/ItemDetailContainer.js'
 
 function App() {
   return (
+    <>
     <div className="App">
       <NavBar />
-      <ItemListContainer />
+      {/* <ItemListContainer /> */}
     </div>
+    <ItemDetailContainer />
+    </>
   );
 }
 

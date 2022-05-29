@@ -1,11 +1,17 @@
 .containerCount{
     display: flex;
-    width: 60%;
+    width: 100%;
     border: 1px solid gray;
     border-radius: 5px;
     justify-content: space-between;
 }
 button{
-    width: 30%;
+    width: 20%;
     font-size: large;
+}
+.suma{
+    margin-right: 20%;
+}
+.resta{
+    margin-left: 20%;
 }
