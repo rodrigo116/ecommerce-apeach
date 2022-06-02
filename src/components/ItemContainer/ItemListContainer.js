@@ -1,10 +1,28 @@
 import { useState, useEffect } from 'react'
 import ItemList from './ItemList.js';
 import productos from '../../utils/ProductsMock.js'
+import { useParams } from 'react-router-dom'
+import './itemListContainer.css'
 
 
 function ItemListContainer() {
     const [products, setProducts] = useState([])
+    const { category } = useParams()
+
+    useEffect( () => {
+        setProducts([])
+        console.log("category: ", category)
+        getProducts()
+        .then( (response) => {
+            // setProducts(response)
+            filterByCategory(response)
+        })
+        .catch( (error) => {
+            console.log(error)
+        })
+        .finally( () => {
+        })
+    }, [category])
 
     const getProducts = () => {
         return new Promise( ( resolve, reject) => {
@@ -16,26 +34,25 @@ function ItemListContainer() {
                 } else {
                     reject("Error Loading Products")
                 }
-            }, 2000)
+            }, 10)
         })
     }
-    useEffect( () => {
-        getProducts()
-        .then( (response) => {
-            setProducts(response)
+
+    const filterByCategory = (array) => {
+        return array.map( (item) => {
+            if(item.category == category){
+                
+                return setProducts(products => [...products, item])
+            }
         })
-        .catch( (error) => {
-        })
-        .finally( () => {
-        })
-    }, [])
+    }
 
 
     return (
-    <div >
-        <ItemList title={'Cocteles'} products={productos} />
+    <div className='itemListContainer'>
+        <ItemList title={'Menu'} products={products} />
     </div>
     );
 }
 
-export default ItemListContainer;
+export default ItemListContainer

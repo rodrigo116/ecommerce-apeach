@@ -11,7 +11,7 @@ const ItemList = ({title, products}) => {
                 products.map( ({title, price, image, description, stock, id }) => {
                     return(
                         <div key={id}>
-                            <Item stock={stock} title={title} price={price} image={image}/>
+                            <Item stock={stock} title={title} price={price} image={image} id={id}/>
                         </div>
                     )
                 })

@@ -1,16 +1,38 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-size: large;
+}
 .fotoLogo{
     height:50px;
 }
-.menuHeader ul{
-    list-style-type: none;
-    width: 70vw;
-    display: flex;
-    justify-content: space-around;
-
-}
-.botonNavBar{
-    color: white;
-}
 .nombreBar{
     margin-right: 20px;
+} 
+.nav > ul{
+    list-style-type: none;
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav li ul{
+    position: absolute;
+    list-style-type: none;
+    background-color: rgb(25, 25, 25);
+    padding: 0%;
+    display: none;
+}
+.nav li:hover > ul {
+    display: block;
+}
+.btn{
+    text-decoration: none;
+    color: white;
 }

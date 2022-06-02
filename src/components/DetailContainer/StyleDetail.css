@@ -37,6 +37,7 @@
     letter-spacing: 2px;
     border-radius: 30px;
     background: linear-gradient(90deg,#888888,#141414);
+    cursor: pointer;
 }
 .boton:hover{
     background: linear-gradient(90deg,#141414,#888888);

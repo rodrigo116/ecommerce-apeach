@@ -1,53 +1,30 @@
 import './navbar.css';
 import CartWidget from '../CartWidget/CartWidget.js'
-import {  AppBar,  Stack, Toolbar,Typography, Button } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom'
 
 function appBarLabel() {
 return (
-    <Toolbar>
-    <img className='fotoLogo' src="./logo-apeach.jpg" alt="logo" />
-    <Typography className='menuHeader' variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-    <ul>
-        <li>
-            <Button style={{color: "white"}} variant="text">Home</Button>
-        </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Menú</Button>
-        </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Contacto</Button>
-        </li>
-        <li>
-            <Button style={{color: "white"}} variant="text">Nosotros</Button>
-        </li>
-    </ul>
-    </Typography>
-    <h2 className='nombreBar'>Apeach Bar</h2>
-    <div>
-        <CartWidget/> 
+    <div className='nav'>
+        <Link className='btn' to={`/`} ><img className='fotoLogo' src="/logo-apeach.jpg" alt="logo" /></Link>
+        <ul> 
+            <li><Link className='btn' to={`/`} >Home</Link></li>
+            <li>Menu
+                <ul>
+                    <li><Link className='btn' to={`/menu/cocteles`} >Cocteles</Link></li>
+                    <li><Link className='btn' to={`/menu/platos`} >Platos</Link></li>
+                    <li><Link className='btn' to={`/menu/picadas`} >Picadas</Link></li>
+                </ul>
+            </li>
+            <li><Link className='btn' to={`/nosotros`} >Nosotros</Link></li>
+            <li><Link className='btn' to={`/contacto`} >Contacto</Link></li>
+        </ul>
+        <Link className='btn' to={`/`} ><h2 className='nombreBar'>Apeach Bar</h2></Link>
+        <div>
+            <CartWidget/> 
+        </div>
     </div>
-    </Toolbar>
     );
 }
 
-const darkTheme = createTheme({
-palette: {
-    mode: 'dark',
-    primary: {
-    main: '#1976d2',
-    },
-},
-});
 
-export default function NavBar() {
-return (
-    <Stack spacing={2} sx={{ flexGrow: 1 }}>
-    <ThemeProvider theme={darkTheme}>
-        <AppBar position="static" color="primary">
-            {appBarLabel('default')}
-        </AppBar>
-    </ThemeProvider>
-    </Stack>
-);
-}
+export default appBarLabel
