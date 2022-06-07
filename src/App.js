@@ -8,6 +8,7 @@ import Detail from './pages/Detail.js'
 import NotFound from './pages/NotFound.js'
 import Nosotros from './pages/Nosotros.js'
 import Contacto from './pages/Contacto.js'
+import Cart from './pages/Cart.js'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/product/:id' element={<Detail />} />
           <Route path='/Nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

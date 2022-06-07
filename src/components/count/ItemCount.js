@@ -1,25 +1,30 @@
 import './ItemCount.css'
-import { useState } from 'react'
-const ItemCount = (prop) => {
-    const [count, setCount] = useState(1)
-    const stock = prop.stock;
+
+
+const ItemCount = ({ quantity, actualizarCantidad, stock, setShowButton }) => {
+
+
+    const disponible = stock;
     const addCount = () => {
-        if(stock > count){
-            setCount( prev => prev +1 )
+        if(disponible > quantity){
+            actualizarCantidad( prev => prev +1 )
         }
     }
     const removeCount = () => {
-        if(count > 1){
-            setCount( prev => prev -1 )
+        if(quantity > 1){
+            actualizarCantidad( prev => prev -1 )
         }
     }
     
     return(
-        <div className='containerCount'>
-            <button className='resta' onClick={removeCount}>-</button>
-            <span>{count}</span>
-            <button className='suma' onClick={addCount}>+</button>
-        </div>
+        <>
+            <div className='containerCount'>
+                <button className='resta' onClick={removeCount}>-</button>
+                <span>{quantity}</span>
+                <button className='suma' onClick={addCount}>+</button>
+            </div>
+            <p className="boton" onClick={() => setShowButton(true)}>Agregar</p>
+        </>
     )
 }
 
